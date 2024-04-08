@@ -127,11 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CppToyProjectServer.cpp" />
+    <ClCompile Include="Main\CppToyProjectServer.cpp" />
     <ClCompile Include="Managers\playerManager.cpp" />
     <ClCompile Include="Objects\player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Main\headers.h" />
     <ClInclude Include="Managers\playerManager.h" />
     <ClInclude Include="Objects\player.h" />
   </ItemGroup>

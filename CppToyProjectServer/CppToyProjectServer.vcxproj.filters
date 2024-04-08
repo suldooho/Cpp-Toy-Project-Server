@@ -28,16 +28,19 @@
     <Filter Include="헤더 파일\Objects">
       <UniqueIdentifier>{75a74e71-2d2b-4b25-b5c2-c68772492ae1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Main">
+      <UniqueIdentifier>{013edf3f-705a-490a-b57a-a39d606c5e47}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CppToyProjectServer.cpp">
-      <Filter>소스 파일\Main</Filter>
-    </ClCompile>
     <ClCompile Include="Managers\playerManager.cpp">
       <Filter>소스 파일\Managers</Filter>
     </ClCompile>
     <ClCompile Include="Objects\player.cpp">
       <Filter>소스 파일\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Main\CppToyProjectServer.cpp">
+      <Filter>소스 파일\Main</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +49,9 @@
     </ClInclude>
     <ClInclude Include="Objects\player.h">
       <Filter>헤더 파일\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Main\headers.h">
+      <Filter>헤더 파일\Main</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
