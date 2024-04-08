@@ -31,6 +31,9 @@
     <Filter Include="헤더 파일\Main">
       <UniqueIdentifier>{013edf3f-705a-490a-b57a-a39d606c5e47}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\Threads">
+      <UniqueIdentifier>{0885f18c-3aed-4288-bbc6-e4ab92c4f261}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Managers\playerManager.cpp">
@@ -52,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="Main\headers.h">
       <Filter>헤더 파일\Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Threads\communicationThread.h">
+      <Filter>헤더 파일\Threads</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
