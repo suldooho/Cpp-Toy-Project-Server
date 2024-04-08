@@ -4,3 +4,6 @@
 #include <WinSock2.h>
 #include <Windows.h>
 #include <string.h>
+#include <vector>
+
+#include "../Objects/player.h"
