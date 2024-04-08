@@ -1,4 +1,6 @@
 #pragma once
+#include "../Main/headers.h"
+
 class PlayerManager
 {
 private:
@@ -15,5 +17,9 @@ private:
     }
 
 private:
+    std::vector<Player> players;
+
+
+
 };
 
