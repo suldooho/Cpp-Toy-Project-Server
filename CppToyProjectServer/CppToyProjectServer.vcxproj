@@ -128,10 +128,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CppToyProjectServer.cpp" />
-    <ClCompile Include="playerManager.cpp" />
+    <ClCompile Include="Managers\playerManager.cpp" />
+    <ClCompile Include="Objects\player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="playerManager.h" />
+    <ClInclude Include="Managers\playerManager.h" />
+    <ClInclude Include="Objects\player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

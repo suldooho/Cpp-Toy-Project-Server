@@ -22,18 +22,30 @@
     <Filter Include="헤더 파일\Managers">
       <UniqueIdentifier>{b770ef9b-80c2-4b39-861c-572b22431d4b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="소스 파일\Objects">
+      <UniqueIdentifier>{4525d097-5e57-4a84-901d-f0c5735f8831}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\Objects">
+      <UniqueIdentifier>{75a74e71-2d2b-4b25-b5c2-c68772492ae1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CppToyProjectServer.cpp">
       <Filter>소스 파일\Main</Filter>
     </ClCompile>
-    <ClCompile Include="playerManager.cpp">
+    <ClCompile Include="Managers\playerManager.cpp">
       <Filter>소스 파일\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\player.cpp">
+      <Filter>소스 파일\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="playerManager.h">
+    <ClInclude Include="Managers\playerManager.h">
       <Filter>헤더 파일\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects\player.h">
+      <Filter>헤더 파일\Objects</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
