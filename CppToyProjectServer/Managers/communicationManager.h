@@ -3,22 +3,13 @@
 
 
 class CommunicationManager
-{
-private:
-    static CommunicationManager* m_instance;
+{  
+public:
+	static CommunicationManager& getInstance();
 
-    CommunicationManager* getInstance()
-    {
-        if (!m_instance)
-        {
-            m_instance = this;
-        }
-
-        return m_instance;
-    }
-
-public: 
+private: 
 	CommunicationManager();
+    // Test All Constructer Disalbe
 
 private:
 	const unsigned int m_port = 2139;

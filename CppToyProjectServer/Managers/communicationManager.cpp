@@ -1,7 +1,13 @@
 #include "communicationManager.h"
 
+CommunicationManager& CommunicationManager::getInstance()
+{  
+	static CommunicationManager communicationManager;
+	return communicationManager; 
+}
+
 CommunicationManager::CommunicationManager() : m_completionPort(NULL), m_serverSocket(NULL)
-{
+{ 
 }
 
 void CommunicationManager::initialization()
