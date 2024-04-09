@@ -7,14 +7,18 @@ enum class PlayerLocation
 	Playing
 };
 
-class Player
+struct HandleData
 {
-public:
-	Player() = delete;
-	Player(std::string ip, std::string id);
+	SOCKET clientSocket;
+	SOCKADDR_IN clientAddress;
+};
+
+class Player
+{  
+private:
+	HandleData m_handleData;
 
 private:
-	std::string m_ip;
 	std::string m_id;
 
 	PlayerLocation m_playerLocation;
