@@ -7,3 +7,4 @@
 #include <vector>
 
 #include "../Objects/player.h"
+#include "../Managers/communicationManager.h"

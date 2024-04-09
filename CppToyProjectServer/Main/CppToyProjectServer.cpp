@@ -1,6 +1,11 @@
-﻿#include <iostream>
+﻿#include "headers.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	CommunicationManager& communicationManager = CommunicationManager::getInstance();
+	communicationManager.initialization();
+
+
+
+	communicationManager.playerAccept();
 } 
