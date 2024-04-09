@@ -108,6 +108,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,11 +129,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main\CppToyProjectServer.cpp" />
+    <ClCompile Include="Managers\communicationManager.cpp" />
     <ClCompile Include="Managers\playerManager.cpp" />
     <ClCompile Include="Objects\player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main\headers.h" />
+    <ClInclude Include="Managers\communicationManager.h" />
     <ClInclude Include="Managers\playerManager.h" />
     <ClInclude Include="Objects\player.h" />
     <ClInclude Include="Threads\communicationThread.h" />

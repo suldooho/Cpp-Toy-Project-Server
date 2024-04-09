@@ -45,6 +45,9 @@
     <ClCompile Include="Main\CppToyProjectServer.cpp">
       <Filter>소스 파일\Main</Filter>
     </ClCompile>
+    <ClCompile Include="Managers\communicationManager.cpp">
+      <Filter>소스 파일\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Managers\playerManager.h">
@@ -58,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="Threads\communicationThread.h">
       <Filter>헤더 파일\Threads</Filter>
+    </ClInclude>
+    <ClInclude Include="Managers\communicationManager.h">
+      <Filter>헤더 파일\Managers</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
