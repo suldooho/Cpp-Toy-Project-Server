@@ -2,10 +2,6 @@
 
 int main()
 {
-	CommunicationManager& communicationManager = CommunicationManager::getInstance();
-	communicationManager.initialization();
-
-
-
-	communicationManager.playerAccept();
+	CommunicationManager::getInstance().initialization(); 
+	CommunicationManager::getInstance().playerAccept();
 } 

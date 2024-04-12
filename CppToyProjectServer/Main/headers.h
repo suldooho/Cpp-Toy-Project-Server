@@ -5,6 +5,7 @@
 #include <Windows.h>
 #include <string.h>
 #include <vector>
+#include <thread>
 
 #include "../Objects/player.h"
 #include "../Managers/communicationManager.h"
