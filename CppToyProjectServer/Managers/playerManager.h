@@ -3,23 +3,21 @@
 
 class PlayerManager
 {
-private:
-    static PlayerManager* m_instance;
-
-    PlayerManager* getInstance()
-    {
-        if (!m_instance)
-        {
-            m_instance = this;
-        }
-
-        return m_instance;
-    }
+public:
+    static PlayerManager& getInstance();
 
 private:
-    std::vector<Player> players;
+    PlayerManager();
 
+public:
+    PlayerManager(const PlayerManager&) = delete;
+    PlayerManager(PlayerManager&&) = delete;
+     
+private:
+    std::vector<std::unique_ptr<Player>> m_players;
 
+public:
+    void addPlayer(Player* player);
 
 };
 

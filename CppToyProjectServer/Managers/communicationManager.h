@@ -1,7 +1,6 @@
 #pragma once
 #include "../Main/headers.h"
 
-
 class CommunicationManager
 {  
 public:
@@ -9,7 +8,10 @@ public:
 
 private: 
 	CommunicationManager();
-    // Test All Constructer Disalbe
+
+public: 
+	CommunicationManager(const CommunicationManager&) = delete;
+	CommunicationManager(CommunicationManager&&) = delete;
 
 private:
 	const unsigned int m_port = 2139;
@@ -20,7 +22,7 @@ private:
 public:
 	void initialization();
 	void playerAccept();
-
+	HANDLE getCompletionPort();
 
 };
 

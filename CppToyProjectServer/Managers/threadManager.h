@@ -9,6 +9,16 @@ public:
 private:
 	ThreadManager();
 
+public:
+	ThreadManager(const ThreadManager&) = delete;
+	ThreadManager(ThreadManager&&) = delete;
+
 private:
-	std::vector<std::jthread> jthreads;
+	std::vector<std::jthread> m_jthreads;
+
+private:
+	void work();
+
+public:
+	void initialization();
 };

@@ -41,10 +41,15 @@ void CommunicationManager::playerAccept()
 		SOCKADDR_IN clientAddress;
 		int length = sizeof(clientAddress);
 		SOCKET clientSocket = accept(m_serverSocket, (SOCKADDR*)&clientAddress, &length);
-		HandleData* handleData = new HandleData();
-		handleData->clientSocket = clientSocket;
-		memcpy(&(handleData->clientAddress), &clientAddress, length);
 
-		CreateIoCompletionPort((HANDLE)handleData->clientSocket, m_completionPort, (DWORD)handleData, 0);
+		Player* player = new Player(clientSocket, clientAddress);
+		PlayerManager::getInstance().addPlayer(player);
+
+		CreateIoCompletionPort((HANDLE)clientSocket, m_completionPort, (DWORD)player, 0);
 	}
+}
+
+HANDLE CommunicationManager::getCompletionPort()
+{
+	return m_completionPort;
 }

@@ -6,6 +6,8 @@
 #include <string.h>
 #include <vector>
 #include <thread>
+#include <memory>
 
 #include "../Objects/player.h"
 #include "../Managers/communicationManager.h"
+#include "../Managers/playerManager.h"
