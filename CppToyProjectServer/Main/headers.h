@@ -9,5 +9,5 @@
 #include <memory>
 
 #include "../Objects/player.h"
-#include "../Managers/communicationManager.h"
 #include "../Managers/playerManager.h"
+#include "../Managers/communicationManager.h"

@@ -1,4 +1,4 @@
-#include "communicationManager.h"
+#include "communicationManager.h" 
 
 CommunicationManager& CommunicationManager::getInstance()
 {  
@@ -45,7 +45,7 @@ void CommunicationManager::playerAccept()
 		Player* player = new Player(clientSocket, clientAddress);
 		PlayerManager::getInstance().addPlayer(player);
 
-		CreateIoCompletionPort((HANDLE)clientSocket, m_completionPort, (DWORD)player, 0);
+		CreateIoCompletionPort((HANDLE)clientSocket, m_completionPort, (ULONG_PTR)player, 0);
 	}
 }
 

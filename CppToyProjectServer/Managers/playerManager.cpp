@@ -1,9 +1,13 @@
-#include "playerManager.h"
+#include "playerManager.h" 
 
 PlayerManager& PlayerManager::getInstance()
 {
 	static PlayerManager playerManager;
 	return playerManager;
+}
+
+PlayerManager::PlayerManager()
+{
 }
 
 void PlayerManager::addPlayer(Player* player)
