@@ -11,3 +11,4 @@
 #include "../Objects/player.h"
 #include "../Managers/playerManager.h"
 #include "../Managers/communicationManager.h"
+#include "../Managers/threadManager.h"

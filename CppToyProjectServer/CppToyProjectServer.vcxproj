@@ -130,12 +130,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main\CppToyProjectServer.cpp" />
+    <ClCompile Include="Main\gameFramework.cpp" />
     <ClCompile Include="Managers\communicationManager.cpp" />
     <ClCompile Include="Managers\playerManager.cpp" />
     <ClCompile Include="Managers\threadManager.cpp" />
     <ClCompile Include="Objects\player.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Main\gameFramework.h" />
     <ClInclude Include="Main\headers.h" />
     <ClInclude Include="Managers\communicationManager.h" />
     <ClInclude Include="Managers\playerManager.h" />

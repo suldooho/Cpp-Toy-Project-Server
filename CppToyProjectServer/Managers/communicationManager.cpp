@@ -1,16 +1,10 @@
 #include "communicationManager.h" 
 
-CommunicationManager& CommunicationManager::getInstance()
-{  
-	static CommunicationManager communicationManager;
-	return communicationManager; 
-}
-
 CommunicationManager::CommunicationManager() : m_completionPort(NULL), m_serverSocket(NULL)
 { 
 }
 
-void CommunicationManager::initialization()
+HANDLE CommunicationManager::initialize()
 {
 	WSADATA wsaData;
 
@@ -32,21 +26,21 @@ void CommunicationManager::initialization()
 
 	bind(m_serverSocket, (SOCKADDR*)&serverAddress, sizeof(serverAddress));
 	listen(m_serverSocket, SOMAXCONN);
+
+	return m_completionPort;
 }
 
-void CommunicationManager::playerAccept()
+Player* CommunicationManager::playerAccept()
 {
-	while (true)
-	{ 
-		SOCKADDR_IN clientAddress;
-		int length = sizeof(clientAddress);
-		SOCKET clientSocket = accept(m_serverSocket, (SOCKADDR*)&clientAddress, &length);
+	SOCKADDR_IN clientAddress;
+	int length = sizeof(clientAddress);
+	SOCKET clientSocket = accept(m_serverSocket, (SOCKADDR*)&clientAddress, &length);
+	
+	Player* player = new Player(clientSocket, clientAddress); 
+	
+	CreateIoCompletionPort((HANDLE)clientSocket, m_completionPort, (ULONG_PTR)player, 0);
 
-		Player* player = new Player(clientSocket, clientAddress);
-		PlayerManager::getInstance().addPlayer(player);
-
-		CreateIoCompletionPort((HANDLE)clientSocket, m_completionPort, (ULONG_PTR)player, 0);
-	}
+	return player;
 }
 
 HANDLE CommunicationManager::getCompletionPort()

@@ -1,18 +1,11 @@
 #include "threadManager.h" 
 
-ThreadManager& ThreadManager::getInstance()
-{
-	static ThreadManager threadManager;
-	return threadManager;
-}
-
 ThreadManager::ThreadManager()
 {
 }
 
-void ThreadManager::work()
+void ThreadManager::work(HANDLE completionPort)
 {
-	HANDLE completionPort = CommunicationManager::getInstance().getCompletionPort();
 	DWORD bytesSize;
 	Player* player;
 	InputOutputData* inputOutputData;
@@ -20,12 +13,12 @@ void ThreadManager::work()
 	GetQueuedCompletionStatus(completionPort, &bytesSize, (PULONG_PTR)&player, (LPOVERLAPPED*)&inputOutputData, INFINITE);
 }
 
-void ThreadManager::initialization()
+void ThreadManager::initialize(HANDLE completionPort)
 {
 	unsigned int threadCount = std::thread::hardware_concurrency();
 
 	for (unsigned int i = 0; i < threadCount; ++i)
 	{ 
-		m_jthreads.emplace_back(std::jthread(&ThreadManager::work, this));
+		m_jthreads.emplace_back(std::jthread(&ThreadManager::work, this, completionPort));
 	}
 }

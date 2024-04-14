@@ -4,12 +4,7 @@
 class CommunicationManager
 {  
 public:
-	static CommunicationManager& getInstance();
-
-private: 
 	CommunicationManager();
-
-public: 
 	CommunicationManager(const CommunicationManager&) = delete;
 	CommunicationManager(CommunicationManager&&) = delete;
 
@@ -20,8 +15,8 @@ private:
 	SOCKET m_serverSocket;
 
 public:
-	void initialization();
-	void playerAccept();
+	HANDLE initialize();
+	Player* playerAccept();
 	HANDLE getCompletionPort();
 
 };

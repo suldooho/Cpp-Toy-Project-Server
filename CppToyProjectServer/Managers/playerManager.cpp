@@ -1,12 +1,10 @@
 #include "playerManager.h" 
 
-PlayerManager& PlayerManager::getInstance()
+PlayerManager::PlayerManager()
 {
-	static PlayerManager playerManager;
-	return playerManager;
 }
 
-PlayerManager::PlayerManager()
+void PlayerManager::initialize()
 {
 }
 

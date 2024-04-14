@@ -4,12 +4,7 @@
 class ThreadManager
 {
 public:
-	static ThreadManager& getInstance();
-
-private:
 	ThreadManager();
-
-public:
 	ThreadManager(const ThreadManager&) = delete;
 	ThreadManager(ThreadManager&&) = delete;
 
@@ -17,8 +12,8 @@ private:
 	std::vector<std::jthread> m_jthreads;
 
 private:
-	void work();
+	void work(HANDLE completionPort);
 
 public:
-	void initialization();
+	void initialize(HANDLE completionPort);
 };

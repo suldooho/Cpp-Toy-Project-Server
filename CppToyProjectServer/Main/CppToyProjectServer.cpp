@@ -3,6 +3,5 @@
 
 int main()
 {
-	CommunicationManager::getInstance().initialization(); 
-	CommunicationManager::getInstance().playerAccept();
+
 } 
