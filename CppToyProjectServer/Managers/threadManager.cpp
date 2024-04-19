@@ -1,7 +1,12 @@
-#include "threadManager.h" 
-
-ThreadManager::ThreadManager()
+#include "threadManager.h"  
+ThreadManager::ThreadManager(HANDLE completionPort)
 {
+	unsigned int threadCount = std::thread::hardware_concurrency();
+
+	for (unsigned int i = 0; i < threadCount; ++i)
+	{
+		m_jthreads.emplace_back(std::jthread(&ThreadManager::work, this, completionPort));
+	}
 }
 
 void ThreadManager::work(HANDLE completionPort)
@@ -11,14 +16,4 @@ void ThreadManager::work(HANDLE completionPort)
 	InputOutputData* inputOutputData;
 	
 	GetQueuedCompletionStatus(completionPort, &bytesSize, (PULONG_PTR)&player, (LPOVERLAPPED*)&inputOutputData, INFINITE);
-}
-
-void ThreadManager::initialize(HANDLE completionPort)
-{
-	unsigned int threadCount = std::thread::hardware_concurrency();
-
-	for (unsigned int i = 0; i < threadCount; ++i)
-	{ 
-		m_jthreads.emplace_back(std::jthread(&ThreadManager::work, this, completionPort));
-	}
-}
+} 

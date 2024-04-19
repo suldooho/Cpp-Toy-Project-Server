@@ -14,8 +14,7 @@ private:
 	HANDLE m_completionPort; 
 	SOCKET m_serverSocket;
 
-public:
-	HANDLE initialize();
+public: 
 	Player* playerAccept();
 	HANDLE getCompletionPort();
 

@@ -4,7 +4,9 @@
 class ThreadManager
 {
 public:
-	ThreadManager();
+	ThreadManager(HANDLE completionPort);
+
+	ThreadManager() = delete;
 	ThreadManager(const ThreadManager&) = delete;
 	ThreadManager(ThreadManager&&) = delete;
 
@@ -13,7 +15,5 @@ private:
 
 private:
 	void work(HANDLE completionPort);
-
-public:
-	void initialize(HANDLE completionPort);
+	 
 };

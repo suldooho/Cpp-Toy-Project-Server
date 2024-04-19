@@ -9,11 +9,16 @@ GameFramework& GameFramework::getInstance()
 GameFramework::GameFramework()
 {
 	m_communicationManager = std::make_unique<CommunicationManager>();
-	m_threadManager = std::make_unique<ThreadManager>();
-	m_playerManager = std::make_unique<PlayerManager>();
+	m_threadManager = std::make_unique<ThreadManager>(m_communicationManager->getCompletionPort());
+	m_playerManager = std::make_unique<PlayerManager>(); 
+}
 
-
-	HANDLE completionPort = m_communicationManager->initialize();
-	m_threadManager->initialize(completionPort);
-	m_playerManager->initialize();
+void GameFramework::run()
+{
+	// Test
+	while (true)
+	{ 
+		Player* player = m_communicationManager->playerAccept();
+		m_playerManager->addPlayer(player);
+	} 
 }

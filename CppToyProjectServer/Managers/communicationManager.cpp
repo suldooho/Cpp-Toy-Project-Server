@@ -1,10 +1,6 @@
 #include "communicationManager.h" 
 
-CommunicationManager::CommunicationManager() : m_completionPort(NULL), m_serverSocket(NULL)
-{ 
-}
-
-HANDLE CommunicationManager::initialize()
+CommunicationManager::CommunicationManager() 
 {
 	WSADATA wsaData;
 
@@ -26,9 +22,7 @@ HANDLE CommunicationManager::initialize()
 
 	bind(m_serverSocket, (SOCKADDR*)&serverAddress, sizeof(serverAddress));
 	listen(m_serverSocket, SOMAXCONN);
-
-	return m_completionPort;
-}
+} 
 
 Player* CommunicationManager::playerAccept()
 {

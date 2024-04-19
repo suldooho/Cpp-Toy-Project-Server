@@ -19,6 +19,7 @@ private:
     std::unique_ptr<class PlayerManager> m_playerManager;
 
 public: 
+    void run();
 };
 
 

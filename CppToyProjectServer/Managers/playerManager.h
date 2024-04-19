@@ -11,8 +11,7 @@ public:
 private:
     std::vector<std::unique_ptr<class Player>> m_players;
      
-public:
-    void initialize();
+public: 
     void addPlayer(Player* player);
 
 };

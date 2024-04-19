@@ -2,11 +2,7 @@
 
 PlayerManager::PlayerManager()
 {
-}
-
-void PlayerManager::initialize()
-{
-}
+} 
 
 void PlayerManager::addPlayer(Player* player)
 {
